@@ -21,14 +21,14 @@
             android:id="@+id/quality_image"
             android:layout_width="64dp"
             android:layout_height="60dp"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_sleep_5"
             app:sleepImage="@{sleep}"
+            app:srcCompat="@drawable/ic_sleep_5"
             tools:srcCompat="@drawable/ic_sleep_5" />
 
         <TextView
