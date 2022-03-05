@@ -7,11 +7,15 @@
         <variable
             name="sleep"
             type="com.example.android.trackmysleepquality.database.SleepNight" />
+        <variable
+            name="clickListener"
+            type="com.example.android.trackmysleepquality.sleeptracker.SleepNightClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> clickListener.onClick(sleep)}">
 
         <ImageView
             android:id="@+id/quality_image"
@@ -28,30 +32,14 @@
             tools:srcCompat="@drawable/ic_sleep_5" />
 
         <TextView
-            android:id="@+id/sleep_length"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/quality_image"
-            app:layout_constraintTop_toTopOf="@+id/quality_image"
-            app:sleepDurationFormatted="@{sleep}"
-            tools:text="Wednesday" />
-
-        <TextView
             android:id="@+id/quality_string"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
             android:text="TextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/quality_image"
-            app:layout_constraintTop_toBottomOf="@+id/sleep_length"
+            app:layout_constraintEnd_toEndOf="@+id/quality_image"
+            app:layout_constraintStart_toStartOf="@+id/quality_image"
+            app:layout_constraintTop_toBottomOf="@+id/quality_image"
             app:sleepQualityString="@{sleep}"
             tools:text="Excellent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
